@@ -1,0 +1,33 @@
+name: Release Build
+
+on:
+  release:
+    types: [published]  # This triggers the workflow when a release is published
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use a cloud-hosted Linux environment
+
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Java (JDK)
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'  # Specify your Java version
+
+    # Step 3: Build the project using Maven
+    - name: Build with Maven
+      run: mvn clean package
+
+    # Step 4: Upload the JAR file to the GitHub Release
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./target/deejavautils-1.0-SNAPSHOT.jar  # Replace with your actual JAR name
+        asset_name: deejavautils-1.0-SNAPSHOT.jar          # Rename as needed
+        content_type: application/java-archive
