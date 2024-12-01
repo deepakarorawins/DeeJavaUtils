@@ -1,11 +1,13 @@
 package com.dee.base64;
 
-public class Base64App {
-    public static void main(String[] args) {
+public class Base64App
+{
+    public static void main(String[] args)
+    {
         IBase64Service base64Service = new Base64ServiceImpl();
 
         // Example input
-        String plainText = "Hello, Base64!";
+        var plainText = "Hello, Base64!";
 
         // Encrypting
         String encodedText = base64Service.encrypt(plainText);
