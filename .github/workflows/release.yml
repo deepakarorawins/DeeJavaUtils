@@ -34,4 +34,3 @@ jobs:
         asset_path: ./target/deejavautils-1.0-SNAPSHOT.jar  # Replace with your actual JAR name
         asset_name: deejavautils-1.0-SNAPSHOT.jar          # Rename as needed
         asset_content_type: application/java-archive  # Correct MIME type for JAR files
-        token: ${{ secrets.GITHUB_TOKEN }}           # Use the GitHub token for authentication
