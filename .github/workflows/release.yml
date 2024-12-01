@@ -27,6 +27,8 @@ jobs:
     # Step 4: Upload the JAR file to the GitHub Release
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
         asset_path: ./target/deejavautils-1.0-SNAPSHOT.jar  # Replace with your actual JAR name
