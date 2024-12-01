@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dee.javautils</groupId>
-    <artifactId>DeeJavaUtils</artifactId>
+    <artifactId>deejavautils</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>DeeJavaUtils</name>
     <description>A utility for java projects</description>
@@ -21,10 +21,14 @@
         <connection>scm:https://github.com/deepakarorawins/DeeJavaUtils.git</connection>
     </scm>
 
-    <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/deepakarorawins/DeeJavaUtils</url>
+        </repository>
+    </distributionManagement>
+
+
 
 </project>
